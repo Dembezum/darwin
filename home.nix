@@ -1,8 +1,13 @@
-{ userSettings, ... }:
+{ userSettings, pkgs, ... }:
 
 {
   # -- IMPORTS --
-  imports = [ ./modules/user/tmux ];
+  imports = [
+    ./modules/user/tmux
+    ./modules/user/zsh
+    ./modules/user/kitty
+
+  ];
 
   # -- USER SETTINGS --
   home = {
@@ -20,7 +25,7 @@
   };
 
   # -- DEFAULT PACKAGES --
-  home.packages = [ ];
+  home.packages = [ pkgs.lazygit ];
 
   # -- VARIABLES --
   home.sessionVariables = {

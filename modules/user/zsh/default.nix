@@ -1,7 +1,11 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ zoxide ];
+  home.packages = with pkgs; [
+    zoxide
+    eza
+
+  ];
 
   programs.zsh = {
     enable = true;
@@ -131,10 +135,6 @@
         }
       '' + ''
         clear
-        echo -e "\033[1;36mNix:\033[0m $(lsb_release -s -d)"
-        echo -e "\033[1;36mLoad Average:\033[0m $(cut -d ' ' -f 1-3 /proc/loadavg)"
-        echo -e "\033[1;36mAvailable Memory:\033[0m $(free -h | awk '/Mem/ {print $7}')"
-        echo -e "\033[1;36mCPU Usage:\033[0m $(top -bn1 | awk '/%Cpu/ {printf("%.2f%", $2 + $4)}')"
         echo ""
       '';
   };
