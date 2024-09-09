@@ -10,7 +10,6 @@
     socat
     tcpdump
     sshfs-fuse
-    nfs-utils
     localsend
 
     # -- SYSTEM UTILITIES --
@@ -19,14 +18,8 @@
     tree
     which
     glances
-    powertop
-    pciutils
-    usbutils
     neofetch
-    lm_sensors
-    lsb-release
     inxi
-    kmon
 
     # -- DEVELOPMENT TOOLS --
     git
@@ -46,23 +39,13 @@
     killall
     htop
     btop
-    parted
-    fuse
-    procs
     du-dust
     duf
-    sdparm
-    hdparm
     gptfdisk
 
     # -- TERMINAL UTILITIES --
     kitty
     tmux
-    xclip
-
-    # -- BOOT MANAGEMENT --
-    efibootmgr
-    efivar
 
     # -- MISCELLANEOUS UTILITIES --
     feh
@@ -92,7 +75,6 @@
     settings = { auto-optimise-store = true; };
     gc = {
       automatic = true;
-      dates = "weekly";
       options = "--delete-older-than 7d";
     };
     extraOptions = ''
@@ -105,7 +87,5 @@
   nixpkgs.config.allowUnfree = true;
 
   # -- Nix Enviornment --
-  programs.nix-ld.enable = true;
-  services.envfs.enable = true;
 
 }
