@@ -2,13 +2,14 @@
 # configuration.nix
 
 {
+  imports = [
+    ./universal.nix
+
+  ];
+
   environment.systemPackages = with pkgs; [
     gotop
-    vim
     curl
-    wget
-    htop
-    btop
     inputs.nixvim-flake.packages.${system}.default
 
   ];
@@ -17,11 +18,28 @@
   services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
 
-  programs.zsh.enable = true; # default shell on catalina
+  security.pam.enableSudoTouchIdAuth = true;
+
+  programs.zsh.enable = true;
   system.stateVersion = 3;
 
   nix.configureBuildUsers = true;
 
+  system = {
+    defaults = {
+      CustomUserPreferences = {
+        # Avoid creating .DS_Store files on network or USB volumes
+        "com.apple.desktopservices" = {
+          DSDontWriteNetworkStores = true;
+          DSDontWriteUSBStores = true;
+        };
+      };
+      # Where to save screenshots
+      screencapture.location = "~/Downloads";
+      # Show hidden files in Finder
+      finder = { AppleShowAllFiles = true; };
+    };
+  };
   homebrew = {
     enable = true;
     #  global.autoIpdate = false;

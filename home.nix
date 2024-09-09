@@ -14,7 +14,11 @@
     inherit (userSettings) username;
 
   };
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
+    lf.enable = true;
+
+  };
 
   # Package configuration
   nixpkgs = {
@@ -25,7 +29,11 @@
   };
 
   # -- DEFAULT PACKAGES --
-  home.packages = [ pkgs.lazygit ];
+  home.packages = with pkgs; [
+    lazygit
+    tailscale
+
+  ];
 
   # -- VARIABLES --
   home.sessionVariables = {
