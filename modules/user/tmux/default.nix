@@ -10,6 +10,9 @@
 # Reload hotkey
 #bind r source-file ~/.tmux.conf \; display-message "Config reloaded..."
 
+set -g default-terminal "screen-256color"
+set -as terminal-features ",xterm-256color:RGB"
+
 # Unbind
       unbind C-v
       unbind C-b
