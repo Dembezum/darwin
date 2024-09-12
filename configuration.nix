@@ -7,12 +7,23 @@
 
   ];
 
-  environment.systemPackages = with pkgs; [
-    gotop
-    curl
-    inputs.nixvim-flake.packages.${system}.default
+  ids.gids.nixbld = 350;
 
-  ];
+  environment = {
+    variables = {
+      CURL_CA_BUNDLE = "/etc/ssl/certs/ca-certificates.crt";
+
+    };
+    systemPackages = with pkgs; [
+      gotop
+      curl
+      cacert
+      inputs.nixvim-flake.packages.${system}.default
+
+    ];
+  };
+
+  users.groups.wheel.members = [ "kristian" ];
 
   users.users.kristian.home = "/Users/kristian";
   services.nix-daemon.enable = true;
@@ -21,7 +32,7 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   programs.zsh.enable = true;
-  system.stateVersion = 4;
+  system.stateVersion = 3;
 
   nix.configureBuildUsers = true;
 
