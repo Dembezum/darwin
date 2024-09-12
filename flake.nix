@@ -36,7 +36,7 @@
         system = "aarch64-darwin";
         hostname = "kristian-mbp";
         profile = "kristian";
-        systemstate = "23.11";
+        systemstate = "24.05";
       };
 
       # --- USER CONFIGURATION ---
@@ -49,7 +49,7 @@
         browser = "firefox";
         video = "feh";
         image = "mpv";
-        homestate = "23.11";
+        homestate = "24.05";
       };
 
       pkgs = import nixpkgs {

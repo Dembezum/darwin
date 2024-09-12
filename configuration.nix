@@ -21,7 +21,7 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   programs.zsh.enable = true;
-  system.stateVersion = 3;
+  system.stateVersion = 4;
 
   nix.configureBuildUsers = true;
 
