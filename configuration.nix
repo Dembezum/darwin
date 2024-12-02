@@ -58,7 +58,10 @@
     casks = [
       "kitty"
       "firefox"
+      "discord"
       "drawio"
+      "freecad"
+      "bambu-studio"
 
     ];
   };

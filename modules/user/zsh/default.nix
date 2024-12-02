@@ -40,6 +40,10 @@
       pbcopy = "xclip -selection clipboard";
       pbpaste = "xclip -selection clipboard -o";
       nedit = "fd --type f --hidden --exclude .git | fzf-tmux -p | xargs nvim";
+      gcom = "git checkout main";
+      gcot = "git checkout testing";
+      gcos = "git checkout staging";
+      gcop = "git checkout production";
       gs = "git status";
       gp = "git push";
       gpo = "git push origin main";

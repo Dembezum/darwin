@@ -10,7 +10,7 @@
         name = "JetBrainsMonoNL Regular";
         size = 11;
       };
-      theme = "Catppuccin-Mocha";
+      themeFile = "Catppuccin-Mocha";
       settings = {
         confirm_os_window_close = 0;
         scrollback_lines = 10000;

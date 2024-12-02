@@ -56,7 +56,8 @@
 
   # -- FONTS --
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    #    (nerd-fonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono 
     font-awesome
     material-design-icons
   ];
@@ -72,7 +73,7 @@
 
   # -- NIX OPTIONS --
   nix = {
-    settings = { auto-optimise-store = true; };
+    optimise.automatic = true;
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";
