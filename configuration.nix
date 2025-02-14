@@ -55,6 +55,9 @@
     enable = true;
     #  global.autoIpdate = false;
 
+    taps = [
+
+    ];
     casks = [
       "kitty"
       "firefox"
@@ -62,6 +65,8 @@
       "drawio"
       "freecad"
       "bambu-studio"
+      "bambu-studio"
+      "keyboard-maestro"
 
     ];
   };
