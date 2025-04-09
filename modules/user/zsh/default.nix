@@ -60,6 +60,7 @@
       sbash = "source ~/.zshrc";
     };
     initExtra = ''
+      PATH=/opt/podman/bin:$PATH
             HISTFILE=~/.zsh_history
             HISTSIZE=10000
             SAVEHIST=$HISTSIZE

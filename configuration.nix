@@ -15,6 +15,7 @@
 
     };
     systemPackages = with pkgs; [
+      wireguard-tools
       gotop
       curl
       cacert
@@ -26,15 +27,12 @@
   users.groups.wheel.members = [ "kristian" ];
 
   users.users.kristian.home = "/Users/kristian";
-  services.nix-daemon.enable = true;
   nix.settings.experimental-features = "nix-command flakes";
 
-  security.pam.enableSudoTouchIdAuth = true;
 
   programs.zsh.enable = true;
   system.stateVersion = 3;
 
-  nix.configureBuildUsers = true;
 
   system = {
     defaults = {
@@ -67,6 +65,7 @@
       "bambu-studio"
       "bambu-studio"
       "keyboard-maestro"
+      "podman-desktop"
 
     ];
   };
